@@ -1,0 +1,32 @@
+def sms():
+    x =[e.get()]
+    x_train_feaatures1 = Tfidf.transform(x)
+    
+
+
+    # predict the text
+    p = model.predict(x_train_feaatures1)
+
+    
+    if p == 1:
+
+        classification = Label(root, text='HAM', font=('helvetica', 15 , 'bold'), fg="green")
+        classification.pack()
+    else:
+        classification = Label(root, text='SPAM', font=('helvetica', 15, 'bold'), fg="red")
+        classification.pack()
+
+
+
+
+root = Tk()
+root.title('SpellCheck')
+root.geometry('400x400')
+
+head = Label(root, text='SPAM  Checker',font=('helvetica', 24 , 'bold'))
+head.pack()
+e = Entry(root, width=400,borderwidth=5)
+e.pack()
+b = Button(root, text = 'Check', font=('helvetica', 20 , 'bold'), fg = 'white', bg = 'green', command = sms)
+b.pack()
+root.mainloop()
