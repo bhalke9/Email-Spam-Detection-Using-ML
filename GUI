@@ -8,7 +8,7 @@ def sms():
     p = model.predict(x_train_feaatures1)
 
     
-    if p == 1:
+    if p == 0:
 
         classification = Label(root, text='HAM', font=('helvetica', 15 , 'bold'), fg="green")
         classification.pack()
